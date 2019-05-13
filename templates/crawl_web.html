@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Crawl by Website</title>
+  <meta charset="UTF-8" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+  <script src="../static/js/jquery-3.2.1.min.js"></script>
+  <script src="../static/js/btn_events_crawler.js"></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Search Engine</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="search_cosine">Search Vector</a></li>
+        <li><a href="search_boolean">Search Boolean</a></li>
+        <li class="active"><a href="crawl_web">Web Crawler</a></li>
+        <li><a href="crawl_file">File Crawler</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <form action="{{url_for('crawlerEvent')}}" method='POST' class="row">
+      <div class="col-lg-12">
+        <div class="input-group">
+          <input type="url" class="form-control" placeholder="https://www.google.gr" name="starting_url" id="starting_url" required autofocus/>
+          <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" id="crawler_btn">
+                        <span class="glyphicon glyphicon-triangle-right"></span>
+          </button>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
